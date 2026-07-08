@@ -1,6 +1,9 @@
 import anthropic
+from dotenv import load_dotenv
 
 from .schemas import AnalysisResult
+
+load_dotenv()
 
 MODEL = "claude-opus-4-8"
 

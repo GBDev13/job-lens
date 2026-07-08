@@ -26,8 +26,12 @@ Requires [uv](https://docs.astral.sh/uv/getting-started/installation/), Node 20+
 
 ```bash
 uv sync
-export ANTHROPIC_API_KEY="sk-ant-..."
+cp .env.example .env   # then edit .env and paste your key
 ```
+
+The key is read from a git-ignored `.env` file (loaded automatically at startup),
+so you do not need to export it each session. An environment variable also works
+if you prefer: `export ANTHROPIC_API_KEY="sk-ant-..."`.
 
 ## Run
 
@@ -79,6 +83,12 @@ Response:
   ]
 }
 ```
+
+## Examples
+
+The [`examples/`](examples/) folder has three sample job descriptions (a toxic
+one, an average one, and a strong one) with the expected score range and red
+flags for each. See [`examples/README.md`](examples/README.md) for how to run them.
 
 ## Tests
 

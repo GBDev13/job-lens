@@ -1,0 +1,27 @@
+Backend Engineer
+
+About the role:
+We're hiring a backend engineer to help build and maintain our payments
+platform. You'll work on our API services and data pipelines.
+
+Responsibilities:
+- Build and maintain REST APIs using Python and PostgreSQL
+- Collaborate with frontend and product teams on new features
+- Participate in code reviews and on-call rotation
+- Help improve system reliability and performance
+
+Requirements:
+- 3+ years of backend development experience
+- Strong knowledge of Python and relational databases
+- Experience with cloud infrastructure (AWS or similar)
+- Good communication skills and a team-first attitude
+
+Nice to have:
+- Experience with payment systems or fintech
+- Familiarity with Kubernetes
+
+What we offer:
+- Salary range: $110,000 - $140,000 depending on experience
+- Remote-friendly with quarterly team meetups
+- Health insurance and 20 days of paid vacation
+- Learning budget of $2,000 per year
