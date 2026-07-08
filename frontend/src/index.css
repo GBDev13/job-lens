@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+
+  --color-bg: #0b0e14;
+  --color-panel: #121722;
+  --color-panel-2: #171d2b;
+  --color-line: #232c3f;
+  --color-ink: #e9edf5;
+  --color-ink-2: #96a0b5;
+  --color-ink-3: #5c6680;
+
+  --color-accent: #7aa2ff;
+  --color-good: #58d68b;
+  --color-warn: #f2b95c;
+  --color-bad: #ff6b6b;
+}
+
+html {
+  background: var(--color-bg);
+  color-scheme: dark;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fade-up 0.35s ease both;
+}
+
+@keyframes ring-fill {
+  from {
+    stroke-dashoffset: var(--ring-circumference);
+  }
+}
+
+.ring-arc {
+  animation: ring-fill 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}

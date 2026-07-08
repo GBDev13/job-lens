@@ -8,3 +8,6 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Built frontend served by FastAPI (kept in repo)
+!src/job_lens/static/dist/

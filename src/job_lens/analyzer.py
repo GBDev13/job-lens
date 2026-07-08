@@ -21,6 +21,7 @@ Look for issues such as:
 For every red flag, quote the exact text, explain the problem, and propose a
 concrete rewrite. Be fair: a good posting should score high and may have zero
 red flags. Do not invent issues that are not supported by the text.
+Write in plain, direct language. Do not use em dashes in your output.
 """
 
 

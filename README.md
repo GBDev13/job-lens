@@ -18,11 +18,11 @@ Built with Python, FastAPI, and the Anthropic API (structured outputs via Pydant
 | AI | Anthropic Claude (structured JSON output) |
 | Validation | Pydantic v2 |
 | Tests | pytest + FastAPI TestClient |
-| Frontend | Single static HTML page (no build step) |
+| Frontend | React + TypeScript + Vite + Tailwind CSS v4 |
 
 ## Setup
 
-Requires [uv](https://docs.astral.sh/uv/getting-started/installation/) and an Anthropic API key.
+Requires [uv](https://docs.astral.sh/uv/getting-started/installation/), Node 20+, and an Anthropic API key.
 
 ```bash
 uv sync
@@ -31,11 +31,29 @@ export ANTHROPIC_API_KEY="sk-ant-..."
 
 ## Run
 
+The built frontend is committed under `src/job_lens/static/dist`, so the backend alone is enough:
+
 ```bash
 uv run uvicorn job_lens.main:app --reload
 ```
 
 Open http://localhost:8000 for the UI, or http://localhost:8000/docs for the interactive API docs (Swagger).
+
+### Frontend development
+
+For hot reload while working on the UI, run the Vite dev server alongside the backend (it proxies `/api` to port 8000):
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Then open http://localhost:5173. To ship UI changes, rebuild the bundle:
+
+```bash
+npm run build
+```
 
 ## API
 
@@ -74,4 +92,4 @@ Tests mock the AI call, so no API key is needed to run them.
 
 1. The frontend posts the job description to `/api/analyze`.
 2. `analyzer.py` sends it to Claude with a recruitment-expert system prompt and a Pydantic schema (`AnalysisResult`) as the required output format.
-3. The API guarantees the response matches the schema, so the backend returns it directly — no parsing or retry logic needed.
+3. The API guarantees the response matches the schema, so the backend returns it directly, with no parsing or retry logic needed.

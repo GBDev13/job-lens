@@ -8,7 +8,7 @@ from fastapi.staticfiles import StaticFiles
 from .analyzer import analyze_job_description
 from .schemas import AnalysisResult, AnalyzeRequest
 
-STATIC_DIR = Path(__file__).parent / "static"
+STATIC_DIR = Path(__file__).parent / "static" / "dist"
 
 app = FastAPI(
     title="Job Lens",
@@ -39,4 +39,4 @@ def index() -> FileResponse:
     return FileResponse(STATIC_DIR / "index.html")
 
 
-app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
+app.mount("/assets", StaticFiles(directory=STATIC_DIR / "assets"), name="assets")
